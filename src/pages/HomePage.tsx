@@ -61,7 +61,7 @@ export function HomePage() {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-                        <Link to="/r/demo/table/1">
+                        <Link to="/r/demo-restaurant/table/1">
                             <Button size="lg" className="group">
                                 <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                                 体验演示
