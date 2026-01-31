@@ -66,11 +66,36 @@ create table if not exists public.order_items (
 -- ==========================================
 -- 2. Realtime Enablement
 -- ==========================================
-alter publication supabase_realtime add table public.restaurants;
-alter publication supabase_realtime add table public.menu_items;
-alter publication supabase_realtime add table public.cart_items;
-alter publication supabase_realtime add table public.orders;
-alter publication supabase_realtime add table public.order_items;
+-- ==========================================
+-- 2. Realtime Enablement (Safe Mode)
+-- ==========================================
+do $$
+begin
+  -- Restaurants
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'restaurants') then
+    alter publication supabase_realtime add table public.restaurants;
+  end if;
+  
+  -- Menu Items
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'menu_items') then
+    alter publication supabase_realtime add table public.menu_items;
+  end if;
+
+  -- Cart Items
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'cart_items') then
+    alter publication supabase_realtime add table public.cart_items;
+  end if;
+
+  -- Orders
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'orders') then
+    alter publication supabase_realtime add table public.orders;
+  end if;
+
+  -- Order Items
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = 'order_items') then
+    alter publication supabase_realtime add table public.order_items;
+  end if;
+end $$;
 
 -- ==========================================
 -- 3. Row Level Security (RLS)
