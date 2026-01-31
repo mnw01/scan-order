@@ -1,0 +1,5 @@
+/* Reset default Vite styles - allow full width for our app */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
