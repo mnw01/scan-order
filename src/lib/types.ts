@@ -24,6 +24,7 @@ export interface MenuItem {
     name: string;
     price: number;
     stock: number;
+    description?: string;
     options: MenuItemOption[];
     image_url: string | null;
     is_available: boolean;
