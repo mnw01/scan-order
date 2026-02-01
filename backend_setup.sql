@@ -197,7 +197,7 @@ begin
       'recommended', 
       58, 
       '肥而不腻，入口即化，经典本帮口味', 
-      'https://images.unsplash.com/photo-1529193591184-b1d580690dd4?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1621255470399-528dd7ce8e4e?auto=format&fit=crop&w=800&q=80',
       '[{"name": "辣度", "choices": ["微辣", "中辣", "特辣"], "required": false}]'::jsonb
     ),
     (
@@ -206,7 +206,7 @@ begin
       'recommended', 
       88, 
       '每日新鲜活鱼，肉质鲜嫩', 
-      'https://images.unsplash.com/photo-1535914616238-d62f44dc0c3c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1606850780554-b55ea2ce9855?auto=format&fit=crop&w=800&q=80',
       '[]'::jsonb
     ),
     (

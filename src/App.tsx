@@ -18,6 +18,7 @@ function App() {
 
         {/* Customer Side */}
         <Route path="/r/:restaurantSlug/table/:tableId" element={<MenuPage />} />
+        <Route path="/restaurant/:restaurantSlug/table/:tableId" element={<MenuPage />} />
 
         {/* Kitchen Side (Protected) */}
         <Route
