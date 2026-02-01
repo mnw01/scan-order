@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MenuItem } from '../../lib/types';
 import { Plus, ImageOff } from 'lucide-react';
 
@@ -7,17 +8,19 @@ interface MenuCardProps {
 }
 
 export function MenuCard({ item, onAddClick }: MenuCardProps) {
+    const [imageError, setImageError] = useState(false);
     const hasOptions = item.options && item.options.length > 0;
 
     return (
         <div className="card-interactive group cursor-pointer" onClick={() => onAddClick(item)}>
             {/* Image */}
             <div className="relative aspect-[4/3] bg-neutral-800 overflow-hidden">
-                {item.image_url ? (
+                {!imageError && item.image_url ? (
                     <>
                         <img
                             src={item.image_url}
                             alt={item.name}
+                            onError={() => setImageError(true)}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         {/* Gradient Overlay */}
